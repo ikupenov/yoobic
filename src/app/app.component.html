@@ -1,0 +1,31 @@
+<ion-app>
+  <ion-split-pane>
+
+    <ion-menu>
+      <ion-content padding-top padding-start padding-end>
+
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="user-avatar" lines="none" routerDirection="root" routerLink="/authentication/sign-in">
+              <ion-avatar class="user-avatar__img">
+                <img src="https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png">
+              </ion-avatar>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+
+  </ion-split-pane>
+</ion-app>

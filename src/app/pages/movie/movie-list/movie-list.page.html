@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="onRefresh($event.target)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card class="ripple" tappable (click)="onMovieClick(movie.id)" *ngFor="let movie of movies">
+    <ion-img [src]=movie.backdropUrl></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{movie.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+      <p>{{movie.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMovies($event.target)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

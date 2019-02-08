@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Sign in
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="logo">
+    <img class="logo__img" src="assets/icon/appicon.svg" alt="Logo">
+  </div>
+
+  <form #signInForm="ngForm">
+    <ion-list lines="none">
+
+      <ion-item>
+        <ion-label color="primary" position="stacked">Username</ion-label>
+        <ion-input clearInput name="username" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" position="stacked">Password</ion-label>
+        <ion-input clearInput name="password" type="password" required></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <ion-button (click)="onSignInButtonClick()" color="primary" type="submit" expand="full">
+        Sign in
+      </ion-button>
+    </div>
+  </form>
+
+  <div>
+    <ion-button (click)="onSignUpButtonClick()" color="medium" fill="clear" expand="full">
+      {{'...or sign up instead?' | lowercase}}
+    </ion-button>
+  </div>
+
+</ion-content>

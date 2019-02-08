@@ -1,0 +1,29 @@
+<ng-container *ngIf="movie$ | async as movie">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        {{movie.title}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-img [src]="movie.backdropUrl"></ion-img>
+
+    <ion-content padding>
+      <ion-note>Storyline</ion-note>
+      <p class="text--color-medium">{{movie.storyline}}</p>
+    </ion-content>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="star"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-content>
+</ng-container>
