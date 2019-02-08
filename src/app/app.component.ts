@@ -11,11 +11,39 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
 
-  public appPages = [
+  public mainMenu = [
+    {
+      title: 'Home',
+      icon: 'home',
+      url: '/movies'
+    },
     {
       title: 'Movies',
-      url: '/movies',
-      icon: 'videocam'
+      icon: 'videocam',
+      url: '/movies'
+    },
+    {
+      title: 'Series',
+      icon: 'tv',
+      url: '/movies'
+    },
+    {
+      title: 'Trending',
+      icon: 'trending-up',
+      url: '/movies'
+    },
+    {
+      title: 'Favorites',
+      icon: 'star',
+      url: '/movies'
+    }
+  ];
+
+  public footerMenu = [
+    {
+      title: 'Settings',
+      icon: 'settings',
+      url: ''
     }
   ];
 
